@@ -1,4 +1,4 @@
-## Data Structures Golang
+## Golang Data Structures
 Implementing **Stack** and **Queue** data structures with Golang, both are using Node Struct, not an Array nor Slice. 
 Available operations:
  - Stack: Push and Pop
