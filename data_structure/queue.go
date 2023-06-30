@@ -1,34 +1,31 @@
-package main
+package data_structure
 
 import "fmt"
 
-type Node struct {
+type queue_node struct {
 	value int
-	next  *Node
+	next  *queue_node
 }
 
-type Queue struct {
-	front  *Node
-	rear   *Node
+type queue interface {
+	Enqueue(value int) // Inserting new node to queue
+	Dequeue()          // Dequeuing
+	ShowQueue()
+}
+
+type queueImpl struct {
+	front  *queue_node
+	rear   *queue_node
 	length int
 }
 
-func InitQueue(value int) *Queue {
-	newQueue := &Queue{
-		front: &Node{
-			value: value,
-		},
-		rear: &Node{
-			value: value,
-		},
-		length: 1,
-	}
-	return newQueue
+func newQueue() queue {
+	return &queueImpl{}
 }
 
 // Enqueue method for enqueuing a new element
-func (q *Queue) Enqueue(value int) {
-	newNode := &Node{
+func (q *queueImpl) Enqueue(value int) {
+	newNode := &queue_node{
 		value: value,
 	}
 	if q.length == 0 {
@@ -45,7 +42,7 @@ func (q *Queue) Enqueue(value int) {
 }
 
 // Dequeue method for dequeuing the first element or the front element of the queue
-func (q *Queue) Dequeue() {
+func (q *queueImpl) Dequeue() {
 	if q.front == nil {
 		return
 	}
@@ -55,7 +52,7 @@ func (q *Queue) Dequeue() {
 	q.length -= 1
 }
 
-func (q *Queue) PrintQueue() {
+func (q *queueImpl) ShowQueue() {
 	if q.length == 0 {
 		fmt.Println("Empty queue")
 		return
@@ -69,17 +66,19 @@ func (q *Queue) PrintQueue() {
 	fmt.Printf("Length\t: %d\n", q.length)
 	fmt.Printf("Front\t: %d\n", q.front.value)
 	fmt.Printf("Rear\t: %d\n", q.rear.value)
+	fmt.Println("")
 }
 
-func main() {
-	myQueue := InitQueue(5)
+/*Queue, FIFO (First in First Out)*/
+func Queue() {
+	myQueue := newQueue()
+	fmt.Println("Enqueuing 10, 15 and 20")
 	myQueue.Enqueue(10)
 	myQueue.Enqueue(15)
 	myQueue.Enqueue(20)
-	myQueue.PrintQueue()
+	myQueue.ShowQueue()
 
-	fmt.Println("")
+	fmt.Println("Dequeuing")
 	myQueue.Dequeue()
-	myQueue.Dequeue()
-	myQueue.PrintQueue()
+	myQueue.ShowQueue()
 }
