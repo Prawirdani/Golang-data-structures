@@ -10,7 +10,7 @@ Currently available:
 	- Bubble sort
 
 #### Usage
-Simply just call the **data_structure** or **sort** packages in **main.go** file
+Simply just call the **data_structure** or **sort** packages in **main.go** file.
 
 ![Example GIF](static/usage.gif)
 
