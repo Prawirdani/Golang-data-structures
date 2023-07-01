@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/prawirdani/sort"
+	"github.com/prawirdani/data_structure"
 )
 
 func main() {
-	sort.BubbleSort()
+	/*Call the available data structures and algorithms in this file!*/
+	data_structure.Queue()
 }

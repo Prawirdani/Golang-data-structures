@@ -1,7 +1,17 @@
 ## Golang Data Structures
-Implementing **Stack** and **Queue** data structures with Golang, both are using Node Struct, not an Array nor Slice. 
-Available operations:
- - Stack: Push and Pop
- - Queue: Enqueue and Dequeue
+Data structure and algorithm with golang.
+Currently available:
+- Data structures:
+	- Stack
+	- Queue
+	- Singly Linked list
+	- Binary Search Tree
+- Sorting algorithms:
+	- Bubble sort
 
-You can add other operations for these two data structures such as Peek or IsEmpty, feel free to play around✌.
+#### Usage
+Simply just call the **data_structure** or **sort** packages in **main.go** file
+
+![Example GIF](static/usage.gif)
+
+feel free to play around✌.
