@@ -6,5 +6,5 @@ import (
 
 func main() {
 	/*Call the available data structures and algorithms in this file!*/
-	data_structure.Queue()
+	data_structure.Graph()
 }
